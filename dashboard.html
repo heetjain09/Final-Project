@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <button onclick="logout()">Logout</button>
+        
+        <h2>Add Expense</h2>
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Amount (₹)" required>
+            <input type="text" id="expense-category" placeholder="Category" required>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <h2>Expenses</h2>
+        <ul id="expense-list"></ul>
+        <canvas id="expenseChart"></canvas>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
